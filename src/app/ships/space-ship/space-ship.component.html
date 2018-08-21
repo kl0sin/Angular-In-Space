@@ -1,0 +1,22 @@
+<div class="ship">
+  <h3 class="ship__name">
+    {{ shipName }}
+  </h3>
+  <img class="ship__image"
+       [title]="shipName"
+       [src]="shipImage">
+  <div class="ship__health"
+       [title]="'Ship health: ' + shipHealth + '%'">
+    <div [style.width.%]="shipHealth"></div>
+  </div>
+  <div class="ship__accessories accessories">
+    <img class="accessories__weapon"
+         [src]="shipWeaponImage"
+         [title]="'Weapon is active!'"
+         *ngIf="shipWeaponActive">
+    <img class="accessories__shield"
+         [src]="shipShieldImage"
+         [title]="'Shield is active!'"
+         *ngIf="shipShieldActive">
+  </div>
+</div>
