@@ -22,4 +22,7 @@
   <div class="ship__pilot" *ngIf="spaceShip.pilot">
     <img [src]="spaceShip.pilot.imageUrl" [title]="spaceShip.pilot.fullName">
   </div>
+  <div class="ship__buttons">
+    <ng-content></ng-content>
+  </div>
 </div>
