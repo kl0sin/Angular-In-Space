@@ -1,0 +1,14 @@
+.pilot {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  &__name {
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+  &__image {
+    max-width: 80%;
+    margin: 0 auto 10px;
+  }
+}
