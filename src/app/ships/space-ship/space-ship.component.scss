@@ -1,9 +1,12 @@
+:host {
+  text-align: center;
+}
+
 .ship {
   position: relative;
-  margin: 15px;
+  margin: 0 0 55px;
   display: inline-block;
-  width: calc(33% - 30px);
-  max-width: 160px;
+  max-width: 80%;
   text-align: center;
   &__name {
     font-weight: 600;
@@ -44,5 +47,14 @@
       max-width: 60px;
       text-align: right;
     }
+  }
+  &__buttons {
+    bottom: -50px;
+    left: 0;
+    position: absolute;
+    height: 40px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
   }
 }

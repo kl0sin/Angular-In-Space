@@ -4,9 +4,19 @@
       <h3 class="hangar__title">
         Space hangar
       </h3>
-      <div class="hangar__ships">
-        <app-space-ship *ngFor="let spaceShip of spaceShips"
+      <div class="hangar__ships columns is-multiline is-centered">
+        <app-space-ship class="column is-one-third" *ngFor="let spaceShip of spaceShips"
                         [spaceShip]="spaceShip">
+          <button class="button is-primary"
+                  *ngIf="selectedPilot && !spaceShip.pilot"
+                  (click)="assignPilot(spaceShip)">
+            Pilotuj
+          </button>
+          <button class="button is-danger"
+                  *ngIf="spaceShip.pilot"
+                  (click)="deassignPilot(spaceShip)">
+            Opuść
+          </button>
         </app-space-ship>
       </div>
     </div>
@@ -15,7 +25,7 @@
         Pilots
       </h3>
       <div class="hangar__pilots">
-        <app-pilot-room></app-pilot-room>
+        <app-pilot-room (selected)="selectedPilot = $event"></app-pilot-room>
       </div>
     </div>
   </div>
