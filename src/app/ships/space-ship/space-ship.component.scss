@@ -28,9 +28,20 @@
   &__accessories {
     position: absolute;
     bottom: 10px;
+    width: 100%;
+    text-align: right;
     img {
       max-width: 30px;
       margin-left: 10px;
+    }
+  }
+  &__pilot {
+    position: absolute;
+    bottom: 10px;
+    text-align: left;
+    img {
+      max-width: 60px;
+      text-align: right;
     }
   }
 }
