@@ -1,22 +1,22 @@
 <div class="ship">
   <h3 class="ship__name">
-    {{ shipName }}
+    {{ spaceShip.shipModel }}
   </h3>
   <img class="ship__image"
-       [title]="shipName"
-       [src]="shipImage">
+       [title]="spaceShip.shipModel"
+       [src]="spaceShip.shipImage">
   <div class="ship__health"
-       [title]="'Ship health: ' + shipHealth + '%'">
-    <div [style.width.%]="shipHealth"></div>
+       [title]="'Ship health: ' + spaceShip.shipHealth + '%'">
+    <div [style.width.%]="spaceShip.shipHealth"></div>
   </div>
   <div class="ship__accessories accessories">
     <img class="accessories__weapon"
-         [src]="shipWeaponImage"
+         [src]="spaceShip.shipWeaponImage"
          [title]="'Weapon is active!'"
-         *ngIf="shipWeaponActive">
+         *ngIf="spaceShip.shipWeaponActive">
     <img class="accessories__shield"
-         [src]="shipShieldImage"
+         [src]="spaceShip.shipShieldImage"
          [title]="'Shield is active!'"
-         *ngIf="shipShieldActive">
+         *ngIf="spaceShip.shipShieldActive">
   </div>
 </div>
