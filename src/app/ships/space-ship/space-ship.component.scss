@@ -2,7 +2,8 @@
   position: relative;
   margin: 15px;
   display: inline-block;
-  width: 160px;
+  width: calc(33% - 30px);
+  max-width: 160px;
   text-align: center;
   &__name {
     font-weight: 600;

@@ -1,0 +1,16 @@
+<div class="columns pilot-room">
+  <app-pilot class="column is-one-third"
+             *ngFor="let pilot of pilots"
+             [pilot]="pilot"
+             [class.pilot-room__selected]="selectedPilot === pilot">
+    <button *ngIf="selectedPilot !== pilot; else deselectButton"
+            class="button is-primary"  (click)="select(pilot)">
+      Zaznacz
+    </button>
+    <ng-template #deselectButton>
+      <button class="button is-danger" (click)="select(null)">
+        Odznacz
+      </button>
+    </ng-template>
+  </app-pilot>
+</div>
