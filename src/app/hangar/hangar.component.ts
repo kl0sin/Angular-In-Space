@@ -6,6 +6,7 @@ import { MoonInvaderShip } from '../space/moon-invader-ship';
 import { ScoutShip } from '../space/scout-ship';
 import { Scout2Ship } from '../space/scout-2-ship';
 import { SpaceShuttleShip } from '../space/space-shuttle-ship';
+import { Pilot } from '../space/pilot';
 
 @Component({
   selector: 'app-hangar',
@@ -17,7 +18,7 @@ export class HangarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.spaceShips.push(new FighterShip());
+    this.spaceShips.push(new FighterShip(new Pilot('Lee Adama')));
     this.spaceShips.push(new BomberShip());
     this.spaceShips.push(new MoonInvaderShip());
     this.spaceShips.push(new ScoutShip());
