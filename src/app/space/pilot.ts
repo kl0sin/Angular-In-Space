@@ -1,13 +1,23 @@
+export interface PilotAttrs {
+  id: number,
+  firstName: string,
+  lastName: string,
+  imageUrl: string
+}
+
 export class Pilot {
+  id: number;
   firstName: string;
   lastName: string;
   imageUrl: string;
 
   static defaultImage = '/assets/pictures/pilots/pilot-5.png';
 
-  constructor(fullName: string, imageUrl = Pilot.defaultImage) {
-    this.fullName = fullName;
-    this.imageUrl = imageUrl;
+  constructor(attrs: Partial<PilotAttrs> = {}) {
+    this.id = attrs.id;
+    this.firstName = attrs.firstName;
+    this.lastName = attrs.lastName;
+    this.imageUrl = attrs.imageUrl || Pilot.defaultImage;
   }
 
   get fullName(): string {
