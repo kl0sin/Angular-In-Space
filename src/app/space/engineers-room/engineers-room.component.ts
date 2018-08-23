@@ -1,9 +1,8 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SpaceShipType } from '../space-ship-type.enum';
 import { OrderFormValue } from '../order-form-value';
-import { Output } from '@angular/core';
 import { SpaceShipService } from '../space-ship.service';
-import { SpaceShip } from '../space-ship';
+import { map } from 'rxjs/operators';
 
 interface ShipType {
   label: string;
@@ -16,8 +15,11 @@ interface ShipType {
   styleUrls: [ './engineers-room.component.scss' ]
 })
 export class EngineersRoomComponent implements OnInit {
-  @Output() shipProduced = new EventEmitter<SpaceShip>();
-  isProducing: boolean;
+  isProducing = false;
+  shipsCount = this.spaceShipService.hangarShips
+    .pipe(
+      map((ships) => ships.length)
+    );
   spaceShipTypes: ShipType[] = [
     { label: 'Fighter', value: SpaceShipType.Fighter },
     { label: 'Bomber', value: SpaceShipType.Bomber },
@@ -37,7 +39,6 @@ export class EngineersRoomComponent implements OnInit {
     this.isProducing = true;
     this.spaceShipService.produceShips(formValue)
       .subscribe({
-        next: ship => this.shipProduced.emit(ship),
         complete: () => this.isProducing = false
       });
   }

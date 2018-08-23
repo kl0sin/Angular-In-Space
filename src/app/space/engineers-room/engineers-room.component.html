@@ -1,7 +1,7 @@
 <div class="columns engineers-room">
   <div class="column">
     <h3 class="engineers-room__title">
-      Engineers room
+      Engineers room <span> Liczba statków: {{ shipsCount | async }} </span>
     </h3>
     <form class="engineers-room__form form columns"
           #form="ngForm"
@@ -40,6 +40,7 @@
                    name="shipCount"
                    required
                    ngModel
+                   placeholder="Ship count"
                    pattern="[1-5]"/>
           </div>
           <div class="form__error"
