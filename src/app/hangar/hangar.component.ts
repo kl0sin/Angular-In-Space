@@ -22,12 +22,6 @@ export class HangarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.spaceShips.push(new FighterShip(new Pilot('Helen Smart')));
-    this.spaceShips.push(new BomberShip());
-    this.spaceShips.push(new MoonInvaderShip());
-    this.spaceShips.push(new ScoutShip());
-    this.spaceShips.push(new Scout2Ship());
-    this.spaceShips.push(new SpaceShuttleShip());
   }
 
   assignPilot(spaceShip: SpaceShip): void {
