@@ -55,7 +55,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Angular-In-Space:build"
+            "browserTarget": "Angular-In-Space:build",
+            "proxyConfig": "api/proxy.conf.json"
           },
           "configurations": {
             "production": {
