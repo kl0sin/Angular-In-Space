@@ -5,7 +5,7 @@
         Space hangar
       </h3>
       <div class="hangar__ships columns is-multiline">
-        <app-space-ship class="column is-one-third" *ngFor="let spaceShip of spaceShips"
+        <app-space-ship class="column is-one-third" *ngFor="let spaceShip of spaceShips | async"
                         [spaceShip]="spaceShip">
           <button class="button is-primary"
                   *ngIf="selectedPilot && !spaceShip.pilot"
@@ -26,7 +26,7 @@
       </h3>
       <div class="hangar__pilots">
         <app-pilot-room (selected)="selectedPilot = $event"></app-pilot-room>
-        <app-engineers-room (shipProduced)="spaceShips.push($event)"></app-engineers-room>
+        <app-engineers-room></app-engineers-room>
       </div>
     </div>
   </div>
