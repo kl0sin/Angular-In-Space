@@ -1,0 +1,66 @@
+<div class="columns engineers-room">
+  <div class="column">
+    <h3 class="engineers-room__title">
+      Engineers room
+    </h3>
+    <form class="engineers-room__form form columns"
+          #form="ngForm"
+          (ngSubmit)="orderSpaceShips(form.value)">
+      <div class="column">
+        <div class="form__group">
+          <span class="form__group__label">
+            Typ:
+          </span>
+          <div class="control">
+            <div class="select">
+              <select name="shipType"
+                      required
+                      ngModel>
+                <option disabled
+                        value=""
+                        selected>
+                  Select your ship type
+                </option>
+                <option *ngFor="let spaceShipType of spaceShipTypes"
+                        [value]="spaceShipType.value">
+                  {{ spaceShipType.label }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form__group">
+          <div class="form__group__label">
+            Ilość:
+          </div>
+          <div class="control">
+            <input class="input"
+                   #shipCountInput="ngModel"
+                   type="number"
+                   name="shipCount"
+                   required
+                   ngModel
+                   pattern="[1-5]"/>
+          </div>
+          <div class="form__error"
+               *ngIf="shipCountInput.hasError('required') && shipCountInput.touched">
+          Pole jest wymagane
+        </div>
+          <div class="form__error"
+               *ngIf="shipCountInput.hasError('pattern')">
+          Liczba musi być w zakresie 1-5
+        </div>
+        </div>
+      </div>
+      <div class="column">
+        <button class="button is-primary"
+                type="submit"
+                [disabled]="form.invalid">
+          Produkuj
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+

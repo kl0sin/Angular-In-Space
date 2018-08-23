@@ -1,0 +1,29 @@
+.engineers-room {
+  &__title {
+    font-size: 1.4em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+  }
+  .form {
+    &__group {
+      &__label {
+        display: block;
+        font-weight: 600;
+        margin: 5px;
+        font-size: 1.2em;
+      }
+    }
+    &__error {
+      text-align: center;
+      margin-top: 5px;
+      padding: 3px;
+      background-color: rgba(0, 0, 0, .8);
+      color: #ff0000;
+    }
+    button {
+      margin-top: 35px;
+    }
+  }
+}
