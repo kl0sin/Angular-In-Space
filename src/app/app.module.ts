@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { HangarComponent } from './hangar/hangar.component';
@@ -21,8 +21,8 @@ import { EngineersRoomComponent } from './space/engineers-room/engineers-room.co
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
