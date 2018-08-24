@@ -1,4 +1,14 @@
-.title {
-  color: #fff;
-  margin: 15px 0;
+.navigation {
+  width: 100%;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, .5);
+  text-align: center;
+  z-index: 1;
+  a {
+    font-weight: 600;
+    color: #fff;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
